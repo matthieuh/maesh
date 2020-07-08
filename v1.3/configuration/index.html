@@ -1,0 +1,984 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Maesh Documentation">
+      
+      
+      
+        <meta name="author" content="containo.us">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/img/maesh-logo.svg">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Configuration - Maesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/styles/extra.css">
+    
+      <link rel="stylesheet" href="../assets/styles/atom-one-light.css">
+    
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W6HPV6C');</script>
+<!-- End Google Tag Manager -->
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="#9d0eb0">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#configuration" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Maesh" class="md-header-nav__button md-logo">
+          
+            <img src="../assets/img/maesh-logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Maesh
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Configuration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/containous/maesh/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Maesh" class="md-nav__button md-logo">
+      
+        <img src="../assets/img/maesh-logo.svg" width="48" height="48">
+      
+    </a>
+    Maesh
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/containous/maesh/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../quickstart/" title="Quickstart" class="md-nav__link">
+      Quickstart
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Configuration
+      </label>
+    
+    <a href="./" title="Configuration" class="md-nav__link md-nav__link--active">
+      Configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#static-configuration" class="md-nav__link">
+    Static configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-configuration" class="md-nav__link">
+    Dynamic configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-service-annotations" class="md-nav__link">
+    Kubernetes Service Annotations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traffic-type" class="md-nav__link">
+    Traffic type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheme" class="md-nav__link">
+    Scheme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    Retry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-breaker" class="md-nav__link">
+    Circuit breaker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limit" class="md-nav__link">
+    Rate Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-mesh-interface" class="md-nav__link">
+    Service Mesh Interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-splitting" class="md-nav__link">
+    Traffic Splitting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-metrics" class="md-nav__link">
+    Traffic Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../compatibility/" title="Compatibility" class="md-nav__link">
+      Compatibility
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Migration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Migration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration/maesh-v1/" title="Maesh v1" class="md-nav__link">
+      Maesh v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration/helm-chart/" title="Helm Chart" class="md-nav__link">
+      Helm Chart
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/thank-you/" title="Thank You!" class="md-nav__link">
+      Thank You!
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/submitting-issues/" title="Submitting Issues" class="md-nav__link">
+      Submitting Issues
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/submitting-pull-requests/" title="Submitting Pull Requests" class="md-nav__link">
+      Submitting Pull Requests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/building-testing/" title="Building and Testing" class="md-nav__link">
+      Building and Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/maintainers/" title="Maintainers" class="md-nav__link">
+      Maintainers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#static-configuration" class="md-nav__link">
+    Static configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-configuration" class="md-nav__link">
+    Dynamic configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-service-annotations" class="md-nav__link">
+    Kubernetes Service Annotations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traffic-type" class="md-nav__link">
+    Traffic type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheme" class="md-nav__link">
+    Scheme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    Retry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-breaker" class="md-nav__link">
+    Circuit breaker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limit" class="md-nav__link">
+    Rate Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-mesh-interface" class="md-nav__link">
+    Service Mesh Interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-splitting" class="md-nav__link">
+    Traffic Splitting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-metrics" class="md-nav__link">
+    Traffic Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/containous/maesh/edit/v1.3/docs/content/configuration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
+<p>The configuration for Maesh is broken down into two parts: the static configuration, and the dynamic configuration.
+The static configuration is configured when the service mesh is installed and is configured via the <code>values.yaml</code> file in the Helm install.</p>
+<h2 id="static-configuration">Static configuration<a class="headerlink" href="#static-configuration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>The Maesh image version can be manually defined if needed.</p>
+</li>
+<li>
+<p>Logging level and format for controller and proxies can be defined.</p>
+</li>
+<li>
+<p>The default mesh mode can be configured. If this is not set, the default mode will be HTTP.
+  This means that new mesh services that are not specified will default to operate in HTTP mode.</p>
+</li>
+<li>
+<p>Tracing can be enabled.</p>
+</li>
+<li>
+<p>Access-Control List (ACL) mode can be enabled.
+  This configures Maesh to run in ACL mode, where all traffic is forbidden unless explicitly allowed via an SMI 
+  <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md#traffictarget">TrafficTarget</a>. Please see 
+  the <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md">SMI Specification</a> for more information.</p>
+</li>
+</ul>
+<h2 id="dynamic-configuration">Dynamic configuration<a class="headerlink" href="#dynamic-configuration" title="Permanent link">&para;</a></h2>
+<p>Dynamic configuration can be provided to Maesh using annotations on Kubernetes services and via SMI objects. </p>
+<table>
+<thead>
+<tr>
+<th>Features</th>
+<th>ACL disabled</th>
+<th>ACL enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traffic-Type</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Scheme</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Retry</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Circuit-Breaker</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Rate-Limit</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Traffic-Split (SMI)</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Traffic-Target (SMI)</td>
+<td>✘</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kubernetes-service-annotations">Kubernetes Service Annotations<a class="headerlink" href="#kubernetes-service-annotations" title="Permanent link">&para;</a></h3>
+<p>Annotations on services give the ability to configure how Maesh interprets them.</p>
+<h4 id="traffic-type">Traffic type<a class="headerlink" href="#traffic-type" title="Permanent link">&para;</a></h4>
+<p>The traffic type can be configured by using the following annotation:</p>
+<pre class="highlight"><code class="language-yaml">maesh.containo.us/traffic-type: "http"</code></pre>
+
+<p>This annotation can be set to either <code>http</code>, <code>tcp</code> or <code>udp</code> and will specifies the mode for that service operation.
+If this annotation is not present, the mesh service will operate in the default mode specified in the static configuration.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For now, the <code>udp</code> traffic type does not work when ACL mode is enabled. In ACL mode, all traffic is forbidden unless it
+is explicitly allowed with a <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md#traffictarget">TrafficTarget</a> and
+unfortunately the SMI specification does not yet define a <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-specs/traffic-specs-WD.md">Traffic Spec</a> for <code>UDP</code>.</p>
+</div>
+<h4 id="scheme">Scheme<a class="headerlink" href="#scheme" title="Permanent link">&para;</a></h4>
+<p>The scheme used to define custom scheme for request:</p>
+<pre class="highlight"><code class="language-yaml">maesh.containo.us/scheme: "h2c"</code></pre>
+
+<p>This annotation can be set to either <code>http</code>, <code>https</code> or <code>h2c</code> and is available for <code>maesh.containo.us/traffic-type: "http"</code>.</p>
+<details class="note"><summary>Limitations</summary><p>Please keep in mind, that if you set the scheme to <code>https</code> your service needs to expose itself via HTTPS as there is no
+mTLS in Maesh.</p>
+</details>
+<h4 id="retry">Retry<a class="headerlink" href="#retry" title="Permanent link">&para;</a></h4>
+<p>Retries can be enabled by using the following annotation:</p>
+<pre class="highlight"><code class="language-yaml">maesh.containo.us/retry-attempts: "2"</code></pre>
+
+<p>This annotation sets the number of retry attempts that Maesh will make if a network error occurs.
+Please note that this value is a string, and needs to be quoted.</p>
+<h4 id="circuit-breaker">Circuit breaker<a class="headerlink" href="#circuit-breaker" title="Permanent link">&para;</a></h4>
+<p>Circuit breaker can be enabled by using the following annotation:</p>
+<pre class="highlight"><code class="language-yaml">maesh.containo.us/circuit-breaker-expression: "Expression"</code></pre>
+
+<p>This annotation sets the expression for circuit breaking.
+The circuit breaker protects your system from stacking requests to unhealthy services (resulting in cascading failures).
+When your system is healthy, the circuit is closed (normal operations). When your system becomes unhealthy, the circuit opens, and requests are no longer forwarded (but handled by a fallback mechanism).</p>
+<p>All configuration options are available <a href="https://docs.traefik.io/v2.0/middlewares/circuitbreaker/#configuration-options">here</a>.</p>
+<h4 id="rate-limit">Rate Limit<a class="headerlink" href="#rate-limit" title="Permanent link">&para;</a></h4>
+<p>Rate limiting can be enabled by using the following annotations:</p>
+<pre class="highlight"><code class="language-yaml">maesh.containo.us/ratelimit-average: "100"
+maesh.containo.us/ratelimit-burst: "200"</code></pre>
+
+<p>These annotation sets average and burst requests per second limit for the service.
+Please note that this value is a string, and needs to be quoted.</p>
+<p>Further details about the rate limiting can be found <a href="https://docs.traefik.io/v2.0/middlewares/ratelimit/#configuration-options">here</a>.</p>
+<h3 id="service-mesh-interface">Service Mesh Interface<a class="headerlink" href="#service-mesh-interface" title="Permanent link">&para;</a></h3>
+<h4 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h4>
+<p>The first step is to describe what the traffic of our server application looks like.</p>
+<pre class="highlight"><code class="language-yaml">---
+apiVersion: specs.smi-spec.io/v1alpha1
+kind: HTTPRouteGroup
+metadata:
+  name: server-routes
+  namespace: server
+matches:
+  - name: api
+    pathRegex: /api
+    methods: ["*"]
+  - name: metrics
+    pathRegex: /metrics
+    methods: ["GET"]</code></pre>
+
+<p>In this example, we define a set of HTTP routes for our <code>server</code> application.</p>
+<p>More precisely, the <code>server</code> app is composed by two routes:</p>
+<ul>
+<li>The <code>api</code> route under the <code>/api</code> path, accepting all methods.</li>
+<li>The <code>metrics</code> routes under the <code>/metrics</code> path, accepting only <code>GET</code> requests.</li>
+</ul>
+<p>Other types of route groups and detailed information are available <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-specs/v1alpha2/traffic-specs.md">in the SMI specification</a>.</p>
+<p>By default, all traffic is denied so we need to grant access to clients to our application. This is done by defining a <code>TrafficTarget</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">TrafficTarget Source &amp; Destination</p>
+<p>Please note that TrafficTarget is a namespaced resource.
+If the destination namespace is not populated, the TrafficTarget namespace will be used as the destination namespace.
+The source namespace must be populated, as it cannot be inferred.</p>
+</div>
+<pre class="highlight"><code class="language-yaml">---
+apiVersion: access.smi-spec.io/v1alpha1
+kind: TrafficTarget
+metadata:
+  name: client-server-target
+  namespace: server
+destination:
+  kind: ServiceAccount
+  name: server
+  namespace: server
+specs:
+  - kind: HTTPRouteGroup
+    name: server-routes
+    matches:
+      - api
+sources:
+  - kind: ServiceAccount
+    name: client
+    namespace: client</code></pre>
+
+<p>In this example, we grant access to all pods running with the service account <code>client</code> under the namespace <code>client</code> to the HTTP route <code>api</code> specified by on the group <code>server-routes</code> on all pods running with the service account <code>server</code> under the namespace <code>server</code>.</p>
+<p>Any client running with the service account <code>client</code> under the <code>client</code> namespace accessing <code>server.server.maesh/api</code> is allowed to access the <code>/api</code> resource. Others will receive 404 answers from the Maesh node.</p>
+<p>More information can be found <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md">in the SMI specification</a>.</p>
+<h4 id="traffic-splitting">Traffic Splitting<a class="headerlink" href="#traffic-splitting" title="Permanent link">&para;</a></h4>
+<p>SMI defines the <code>TrafficSplit</code> resource which allows to direct subsets of the traffic to different services.</p>
+<pre class="highlight"><code class="language-yaml">apiVersion: split.smi-spec.io/v1alpha2
+kind: TrafficSplit
+metadata:
+  name: server-split
+  namespace: server
+spec:
+  service: server
+  backends:
+  - service: server-v1
+    weight: 80
+  - service: server-v2
+    weight: 20</code></pre>
+
+<p>In this example, we define a traffic split for our server service between two versions of our server, v1 and v2.
+<code>server.server.maesh</code> directs 80% of the traffic to the server-v1 pods, and 20% of the traffic to the server-v2 pods.</p>
+<p>More information can be found <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-split/v1alpha2/traffic-split.md">in the SMI specification</a>.</p>
+<h4 id="traffic-metrics">Traffic Metrics<a class="headerlink" href="#traffic-metrics" title="Permanent link">&para;</a></h4>
+<p>At the moment, Maesh does not implement the <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-metrics/traffic-metrics-WD.md">Traffic Metrics specification</a>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright &copy; 2016-2020 Containous
+                </div>
+                
+                powered by
+                <a href="https://www.mkdocs.org" title="MkDocs">MkDocs</a>
+                and
+                <a href="https://squidfunk.github.io/mkdocs-material/"
+                   title="Material for MkDocs">
+                    Material for MkDocs</a>
+            </div>
+
+            <!-- Social links -->
+            
+            
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../assets/js/hljs/highlight.pack.js"></script>
+      
+        <script src="../assets/js/extra.js"></script>
+      
+        <script src="../theme/js/structor-menu.js"></script>
+      
+    
+  </body>
+</html>

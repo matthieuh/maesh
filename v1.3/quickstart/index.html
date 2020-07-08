@@ -1,0 +1,888 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Maesh Documentation">
+      
+      
+      
+        <meta name="author" content="containo.us">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/img/maesh-logo.svg">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Quickstart - Maesh</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/styles/extra.css">
+    
+      <link rel="stylesheet" href="../assets/styles/atom-one-light.css">
+    
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W6HPV6C');</script>
+<!-- End Google Tag Manager -->
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="#9d0eb0">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#quickstart" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Maesh" class="md-header-nav__button md-logo">
+          
+            <img src="../assets/img/maesh-logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Maesh
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Quickstart
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/containous/maesh/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Maesh" class="md-nav__button md-logo">
+      
+        <img src="../assets/img/maesh-logo.svg" width="48" height="48">
+      
+    </a>
+    Maesh
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/containous/maesh/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Quickstart
+      </label>
+    
+    <a href="./" title="Quickstart" class="md-nav__link md-nav__link--active">
+      Quickstart
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rbac" class="md-nav__link">
+    RBAC
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubeadm" class="md-nav__link">
+    kubeadm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-maesh" class="md-nav__link">
+    Installing Maesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-maesh" class="md-nav__link">
+    Using Maesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../compatibility/" title="Compatibility" class="md-nav__link">
+      Compatibility
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Migration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Migration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration/maesh-v1/" title="Maesh v1" class="md-nav__link">
+      Maesh v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration/helm-chart/" title="Helm Chart" class="md-nav__link">
+      Helm Chart
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/thank-you/" title="Thank You!" class="md-nav__link">
+      Thank You!
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/submitting-issues/" title="Submitting Issues" class="md-nav__link">
+      Submitting Issues
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/submitting-pull-requests/" title="Submitting Pull Requests" class="md-nav__link">
+      Submitting Pull Requests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/building-testing/" title="Building and Testing" class="md-nav__link">
+      Building and Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/maintainers/" title="Maintainers" class="md-nav__link">
+      Maintainers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rbac" class="md-nav__link">
+    RBAC
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubeadm" class="md-nav__link">
+    kubeadm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-maesh" class="md-nav__link">
+    Installing Maesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-maesh" class="md-nav__link">
+    Using Maesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/containous/maesh/edit/v1.3/docs/content/quickstart.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h1>
+<p>Maesh can be installed in your cluster without affecting any running services.
+It can safely be installed using the <a href="https://helm.sh/docs/intro/using_helm/#helm-install-installing-a-package">Helm Chart</a>.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Kubernetes 1.11+</li>
+<li>CoreDNS installed as <a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/">Cluster DNS Provider</a> (versions 1.3+ supported)</li>
+<li>Helm v3</li>
+</ul>
+<h3 id="rbac">RBAC<a class="headerlink" href="#rbac" title="Permanent link">&para;</a></h3>
+<p>Depending on the tool you used to deploy your cluster you might need
+to tweak RBAC permissions.</p>
+<h4 id="kubeadm"><code>kubeadm</code><a class="headerlink" href="#kubeadm" title="Permanent link">&para;</a></h4>
+<p>If you used <code>kubeadm</code> to deploy your cluster, a fast way to allow the
+helm installation to perform all steps it needs is to edit the
+<code>cluster-admin</code> <code>ClusterRoleBinding</code>, adding the following to the
+<code>subjects</code> section:</p>
+<pre class="highlight"><code class="language-yaml">- kind: ServiceAccount
+  name: default
+  namespace: kube-system</code></pre>
+
+<h2 id="installing-maesh">Installing Maesh<a class="headerlink" href="#installing-maesh" title="Permanent link">&para;</a></h2>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Command</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-bash">helm repo add maesh https://containous.github.io/maesh/charts
+helm repo update
+helm install maesh maesh/maesh</code></pre></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">Expected output</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-bash">[...]
+
+NOTES:
+Thank you for installing maesh.
+
+Your release is named maesh.
+
+To learn more about the release, try:
+
+  $ helm status maesh
+  $ helm get maesh</code></pre></div>
+</div>
+<h2 id="using-maesh">Using Maesh<a class="headerlink" href="#using-maesh" title="Permanent link">&para;</a></h2>
+<p>As an example, let's deploy a server application and a client application under the <code>maesh-test</code> namespace.</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">server.yaml</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-yaml">---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+  namespace: maesh-test
+  labels:
+    app: server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+        - name: server
+          image: containous/whoami:v1.4.0
+          ports:
+            - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: server
+  namespace: maesh-test
+spec:
+  selector:
+    app: server
+  ports:
+    - name: web
+      protocol: TCP
+      port: 80
+      targetPort: 80</code></pre></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">client.yaml</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-yaml">---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+  namespace: maesh-test
+  labels:
+    app: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          image: giantswarm/tiny-tools:3.9
+          imagePullPolicy: IfNotPresent
+          command:
+            - "sleep"
+            - "infinity"</code></pre></div>
+</div>
+<p>Create the namespace then deploy those two applications:</p>
+<pre class="highlight"><code class="language-bash">kubectl create namespace maesh-test
+kubectl apply -f server.yaml
+kubectl apply -f client.yaml</code></pre>
+
+<p>You should now see the following output:</p>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">Command</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-bash">kubectl get all -n maesh-test</code></pre></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">Expected output</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-text">NAME                          READY     STATUS    RESTARTS   AGE
+pod/client-7446fdf848-x96fq   1/1       Running   0          79s
+pod/server-7c8fd58db5-rchg8   1/1       Running   0          77s
+pod/server-7c8fd58db5-sd4f9   1/1       Running   0          77s
+
+NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+service/server   ClusterIP   10.43.17.247   &lt;none&gt;        80/TCP    77s
+
+NAME                     READY     UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/client   1/1       1            1           79s
+deployment.apps/server   2/2       2            2           77s
+
+NAME                                DESIRED   CURRENT   READY     AGE
+replicaset.apps/client-7446fdf848   1         1         1         79s
+replicaset.apps/server-7c8fd58db5   2         2         2         77s</code></pre></div>
+</div>
+<p>Take note of the client app pod name (here it's <code>client-7446fdf848-x96fq</code>) and open a new terminal session inside this pod using <code>kubectl exec</code>.</p>
+<pre class="highlight"><code class="language-bash">kubectl -n maesh-test exec -ti client-7446fdf848-x96fq ash</code></pre>
+
+<p>From inside the client container, make sure your server is reachable using the Kubernetes DNS service discovery.</p>
+<div class="superfences-tabs">
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0">Command</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-bash">curl server.maesh-test.svc.cluster.local</code></pre></div>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">Expected Output</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-test">Hostname: server-7c8fd58db5-sd4f9
+IP: 127.0.0.1
+IP: ::1
+IP: 10.42.2.10
+IP: fe80::a4ec:77ff:fe37:1cdd
+RemoteAddr: 10.42.2.9:46078
+GET / HTTP/1.1
+Host: server.maesh-test.svc.cluster.local
+User-Agent: curl/7.64.0
+Accept: */*</code></pre></div>
+</div>
+<p>You can note that all this server application is doing is to respond with the content of the request it receives.</p>
+<p>Now replace the <code>svc.cluster.local</code> suffix by <code>maesh</code>, and tada: you are now using Maesh to reach your server!</p>
+<div class="superfences-tabs">
+<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
+<label for="__tab_5_0">Command</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-bash">curl server.maesh-test.maesh</code></pre></div>
+<input name="__tabs_5" type="radio" id="__tab_5_1" />
+<label for="__tab_5_1">Expected Output</label>
+<div class="superfences-content"><pre class="highlight"><code class="language-test">Hostname: server-7c8fd58db5-rchg8
+IP: 127.0.0.1
+IP: ::1
+IP: 10.42.1.7
+IP: fe80::601d:7cff:fe26:c8c6
+RemoteAddr: 10.42.1.5:59478
+GET / HTTP/1.1
+Host: server.maesh-test.maesh
+User-Agent: curl/7.64.0
+Accept: */*
+Accept-Encoding: gzip
+Uber-Trace-Id: 3f9e7129a059f70:7e889a1ebcb147ac:3f9e7129a059f70:1
+X-Forwarded-For: 10.42.2.9
+X-Forwarded-Host: server.maesh-test.maesh
+X-Forwarded-Port: 80
+X-Forwarded-Proto: http
+X-Forwarded-Server: maesh-mesh-w95q2
+X-Real-Ip: 10.42.2.9</code></pre></div>
+</div>
+<p>Note the presence of <code>X-Forwarded</code> headers as well as other instrumentation headers like <code>Uber-Trace-Id</code>, indicating than your request has been processed and instrumented by Maesh.</p>
+<h2 id="whats-next">What's next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>See the <a href="../examples/">examples page</a> to see a more advanced example, or dive into the <a href="../configuration/">configuration</a> to discover all Maesh capabilities.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright &copy; 2016-2020 Containous
+                </div>
+                
+                powered by
+                <a href="https://www.mkdocs.org" title="MkDocs">MkDocs</a>
+                and
+                <a href="https://squidfunk.github.io/mkdocs-material/"
+                   title="Material for MkDocs">
+                    Material for MkDocs</a>
+            </div>
+
+            <!-- Social links -->
+            
+            
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../assets/js/hljs/highlight.pack.js"></script>
+      
+        <script src="../assets/js/extra.js"></script>
+      
+        <script src="../theme/js/structor-menu.js"></script>
+      
+    
+  </body>
+</html>
