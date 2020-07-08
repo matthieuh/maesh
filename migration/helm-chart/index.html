@@ -412,6 +412,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#v20-to-v21" class="md-nav__link">
+    v2.0 to v2.1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-mode" class="md-nav__link">
+    Default Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-and-grafana-services" class="md-nav__link">
+    Prometheus and Grafana services
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -578,6 +605,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#v20-to-v21" class="md-nav__link">
+    v2.0 to v2.1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-mode" class="md-nav__link">
+    Default Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-and-grafana-services" class="md-nav__link">
+    Prometheus and Grafana services
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -594,7 +648,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/containous/maesh/edit/v1.2/docs/content/migration/helm-chart.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/containous/maesh/edit/v1.3/docs/content/migration/helm-chart.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">&para;</a></h1>
@@ -610,6 +664,14 @@ and <code>mesh.logLevel</code> options to configure the logging level for the co
 <h3 id="smi-mode">SMI Mode<a class="headerlink" href="#smi-mode" title="Permanent link">&para;</a></h3>
 <p>The <code>smi.enable</code> option has been deprecated and removed. You should use the new and backward compatible ACL mode 
 option as described in the <a href="../../install/#access-control-list">documentation</a>. </p>
+<h2 id="v20-to-v21">v2.0 to v2.1<a class="headerlink" href="#v20-to-v21" title="Permanent link">&para;</a></h2>
+<h3 id="default-mode">Default Mode<a class="headerlink" href="#default-mode" title="Permanent link">&para;</a></h3>
+<p>The <code>controller.mesh.defaultMode</code> option has been deprecated and will be removed in a future major release.
+You should use the new <code>defaultMode</code> option to configure the default traffic mode for Maesh services.</p>
+<h3 id="prometheus-and-grafana-services">Prometheus and Grafana services<a class="headerlink" href="#prometheus-and-grafana-services" title="Permanent link">&para;</a></h3>
+<p>Prior to version <code>v2.1</code>, when the Metrics chart is deployed, Prometheus and Grafana services are exposed by default through 
+a <code>NodePort</code>. For security reasons, those services are not exposed by default anymore. To expose them you should use the 
+new <code>prometheus.service</code> and <code>grafana.service</code> options, more details in the corresponding <a href="https://github.com/containous/maesh/blob/e59b861ac91261b950663410a6223a02fc7e2290/helm/chart/maesh/charts/metrics/values.yaml">values.yaml</a>.</p>
                 
                   
                 

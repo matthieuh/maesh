@@ -728,7 +728,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/containous/maesh/edit/v1.2/docs/content/configuration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/containous/maesh/edit/v1.3/docs/content/configuration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
@@ -740,7 +740,7 @@ The static configuration is configured when the service mesh is installed and is
 <p>The Maesh image version can be manually defined if needed.</p>
 </li>
 <li>
-<p>Logging level for controller and proxies can be defined.</p>
+<p>Logging level and format for controller and proxies can be defined.</p>
 </li>
 <li>
 <p>The default mesh mode can be configured. If this is not set, the default mode will be HTTP.
@@ -752,8 +752,8 @@ The static configuration is configured when the service mesh is installed and is
 <li>
 <p>Access-Control List (ACL) mode can be enabled.
   This configures Maesh to run in ACL mode, where all traffic is forbidden unless explicitly allowed via an SMI 
-  <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-access-control.md">TrafficTarget</a>. Please see 
-  the <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-access-control.md">SMI Specification</a> for more information.</p>
+  <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md#traffictarget">TrafficTarget</a>. Please see 
+  the <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md">SMI Specification</a> for more information.</p>
 </li>
 </ul>
 <h2 id="dynamic-configuration">Dynamic configuration<a class="headerlink" href="#dynamic-configuration" title="Permanent link">&para;</a></h2>
@@ -815,8 +815,8 @@ If this annotation is not present, the mesh service will operate in the default 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>For now, the <code>udp</code> traffic type does not work when ACL mode is enabled. In ACL mode, all traffic is forbidden unless it
-is explicitly allowed with a <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-access-control.md">TrafficTarget</a> and
-unfortunately the SMI specification does not yet define a <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-specs.md">Traffic Spec</a> for <code>UDP</code>.</p>
+is explicitly allowed with a <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md#traffictarget">TrafficTarget</a> and
+unfortunately the SMI specification does not yet define a <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-specs/traffic-specs-WD.md">Traffic Spec</a> for <code>UDP</code>.</p>
 </div>
 <h4 id="scheme">Scheme<a class="headerlink" href="#scheme" title="Permanent link">&para;</a></h4>
 <p>The scheme used to define custom scheme for request:</p>
@@ -871,7 +871,7 @@ matches:
 <li>The <code>api</code> route under the <code>/api</code> path, accepting all methods.</li>
 <li>The <code>metrics</code> routes under the <code>/metrics</code> path, accepting only <code>GET</code> requests.</li>
 </ul>
-<p>Other types of route groups and detailed information are available <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-specs.md">in the specification</a>.</p>
+<p>Other types of route groups and detailed information are available <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-specs/v1alpha2/traffic-specs.md">in the SMI specification</a>.</p>
 <p>By default, all traffic is denied so we need to grant access to clients to our application. This is done by defining a <code>TrafficTarget</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">TrafficTarget Source &amp; Destination</p>
@@ -901,7 +901,7 @@ sources:
 
 <p>In this example, we grant access to all pods running with the service account <code>client</code> under the namespace <code>client</code> to the HTTP route <code>api</code> specified by on the group <code>server-routes</code> on all pods running with the service account <code>server</code> under the namespace <code>server</code>.</p>
 <p>Any client running with the service account <code>client</code> under the <code>client</code> namespace accessing <code>server.server.maesh/api</code> is allowed to access the <code>/api</code> resource. Others will receive 404 answers from the Maesh node.</p>
-<p>More information can be found <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-access-control.md">in the SMI specification</a>.</p>
+<p>More information can be found <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-access/v1alpha1/traffic-access.md">in the SMI specification</a>.</p>
 <h4 id="traffic-splitting">Traffic Splitting<a class="headerlink" href="#traffic-splitting" title="Permanent link">&para;</a></h4>
 <p>SMI defines the <code>TrafficSplit</code> resource which allows to direct subsets of the traffic to different services.</p>
 <pre class="highlight"><code class="language-yaml">apiVersion: split.smi-spec.io/v1alpha2
@@ -919,9 +919,9 @@ spec:
 
 <p>In this example, we define a traffic split for our server service between two versions of our server, v1 and v2.
 <code>server.server.maesh</code> directs 80% of the traffic to the server-v1 pods, and 20% of the traffic to the server-v2 pods.</p>
-<p>More information can be found <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-split.md">in the SMI specification</a>.</p>
+<p>More information can be found <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-split/v1alpha2/traffic-split.md">in the SMI specification</a>.</p>
 <h4 id="traffic-metrics">Traffic Metrics<a class="headerlink" href="#traffic-metrics" title="Permanent link">&para;</a></h4>
-<p>At the moment, Maesh does not implement the <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/traffic-metrics.md">Traffic Metrics specification</a>.</p>
+<p>At the moment, Maesh does not implement the <a href="https://github.com/servicemeshinterface/smi-spec/blob/master/apis/traffic-metrics/traffic-metrics-WD.md">Traffic Metrics specification</a>.</p>
                 
                   
                 
